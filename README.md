@@ -1,2 +1,210 @@
-# ontech-service-website
-Official website for ONTECH - Infinite Service Hub, Mangalore. Providing expert electrical, plumbing, and maintenance services
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONTECH INFINITE SERVICE HUB | Mangalore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-red: #8B0000;      /* Deep Burgundy */
+            --brand-black: #121212;    /* Midnight Charcoal */
+            --brand-gold: #D4AF37;     /* Elegant Gold */
+            --soft-white: #F9F9F9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--soft-white); color: #333; line-height: 1.6; }
+
+        /* 1. LOGO AT THE BEGINNING */
+        .logo-header {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+        }
+        .main-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--brand-black);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .main-logo span { color: var(--brand-red); }
+
+        /* 2. HERO SECTION */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.7)), url('https://images.unsplash.com/photo-1558389186-438424b00a32?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            border-bottom: 8px solid var(--brand-red);
+        }
+        .hero-content h2 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 10px; color: var(--brand-gold); }
+        .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 3.2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.1; }
+        .hero-content p { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* 3. PROMISE BAR */
+        .promise-bar {
+            background: var(--brand-red);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* 4. ABOUT US SECTION */
+        .about-section { padding: 80px 10%; text-align: center; background: #fff; }
+        .about-section h2 { font-family: 'Montserrat', sans-serif; color: var(--brand-black); margin-bottom: 30px; font-size: 2.2rem; }
+        .about-text { max-width: 1000px; margin: 0 auto; color: #555; font-size: 1.1rem; text-align: justify; }
+        .about-text p { margin-bottom: 20px; }
+
+        /* 5. PLANS SECTION */
+        .section-padding { padding: 80px 8%; background: #f4f4f4; }
+        .grid-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
+        .plan-card {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 4px;
+            border-top: 5px solid var(--brand-black);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .plan-card.featured { border-top-color: var(--brand-red); }
+        .plan-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--brand-black); margin-bottom: 15px; font-weight: 800; text-transform: uppercase; }
+        .plan-card p.intro { font-size: 0.95rem; color: #666; margin-bottom: 25px; }
+        .plan-card ul { list-style: none; margin-bottom: 30px; }
+        .plan-card ul li { padding: 12px 0; display: flex; align-items: flex-start; font-size: 0.95rem; border-bottom: 1px solid #f9f9f9; }
+        .plan-card ul li i { color: var(--brand-red); margin-right: 15px; margin-top: 5px; }
+        .plan-card ul li b { color: var(--brand-black); display: block; }
+
+        /* 6. CONTACT SECTION */
+        footer { background: var(--brand-black); color: #fff; padding: 80px 8% 40px; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; }
+        .footer-info h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--brand-gold); margin-bottom: 30px; }
+        .footer-info p { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: center; color: #ccc; }
+        .footer-info i { color: var(--brand-gold); margin-right: 20px; font-size: 1.4rem; }
+        .footer-info a { color: #fff; text-decoration: none; }
+
+        /* 7. END SECTION */
+        .ready-section { text-align: center; background: rgba(255,255,255,0.05); padding: 50px; border-left: 4px solid var(--brand-red); }
+
+        .btn {
+            background: var(--brand-red);
+            color: #fff;
+            padding: 16px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--brand-gold); color: #000; }
+
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            width: 70px; height: 70px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: #fff; font-size: 35px;
+            z-index: 1000; text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-header">
+        <a href="#" class="main-logo">ON<span>TECH</span> INFINITE SERVICE HUB</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Ontech Infinite Service Hub in Mangalore</h2>
+            <h1>Expert Electrical, Plumbing, AMC & Maintenance</h1>
+            <p>Professional 24/7 Support</p>
+        </div>
+    </section>
+
+    <div class="promise-bar">
+        <i class="fas fa-clock"></i> We Arrive in 3 HOUR | 24/7 Availability
+    </div>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <div class="about-text">
+            <p><strong>Ontech Infinite Service Hub</strong> is a leading and trusted provider of electrical and plumbing AMC and comprehensive maintenance solutions in Mangalore. We deliver reliable, round-the-clock support for residential properties, apartment complexes, commercial establishments, and business units.</p>
+            <p>Our service expertise covers Annual Maintenance Contracts (AMC), Personal Maintenance Membership Cards, and rapid-response maintenance support backed by our commitment to a <strong>3-hour complaint resolution guarantee</strong>.</p>
+            <p>With a structured approach to preventive care and the capability to handle urgent breakdowns, we ensure seamless operation, safety, and long-term performance of your electrical and plumbing systems.</p>
+            <p>At Ontech, we combine skilled technicians, disciplined processes, and transparent service to provide consistent, dependable, and professional maintenance—anytime, anywhere.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="grid-plans">
+            <div class="plan-card featured">
+                <h3>Annual Maintenance Contract (AMC)</h3>
+                <p class="intro">Designed specifically for apartment buildings or commercial complexes, offering systematic upkeep and emergency support.</p>
+                <ul>
+                    <li><i class="fas fa-headset"></i><span><b>24/7 Service Access:</b> Uninterrupted service availability for all AMC-related needs.</span></li>
+                    <li><i class="fas fa-calendar-alt"></i><span><b>Scheduled Visits (Every 15 Days):</b> We visit every 15 days to conduct electrical checks and maintain panel boards.</span></li>
+                    <li><i class="fas fa-bolt"></i><span><b>Fast Complaint Resolution:</b> Registered complaints are resolved within 3 hours.</span></li>
+                    <li><i class="fas fa-star"></i><span><b>Subscriber Special Offer:</b> Eligible to purchase the Membership Card at regular cost for unit maintenance.</span></li>
+                    <li><i class="fas fa-plus-circle"></i><span><b>Optional Add-Ons:</b> Tasks outside AMC scope quoted separately with transparency.</span></li>
+                </ul>
+                <a href="https://wa.me/917349466814?text=Interested%20in%20AMC" class="btn">Request AMC Quote</a>
+            </div>
+
+            <div class="plan-card">
+                <h3>Personal Maintenance Membership Card</h3>
+                <p class="intro">Ideal for individual homes, small offices, and commercial businesses requiring reliable and regular maintenance.</p>
+                <ul>
+                    <li><i class="fas fa-id-card"></i><span><b>1-Year Validity:</b> Valid for 365 days from the date of activation.</span></li>
+                    <li><i class="fas fa-home"></i><span><b>Broad Coverage:</b> Applicable to individual houses, commercial shops, and business units.</span></li>
+                    <li><i class="fas fa-shipping-fast"></i><span><b>Priority Service:</b> Includes priority response with complaint resolution within 3 hours.</span></li>
+                    <li><i class="fas fa-tools"></i><span><b>Extended Scope:</b> Request additional services beyond standard scope (charged separately).</span></li>
+                    <li><i class="fas fa-user-check"></i><span><b>Unit-Specific Support:</b> 1-Year AMC subscribers can purchase this for dedicated unit service.</span></li>
+                </ul>
+                <a href="https://wa.me/917349466814?text=Interested%20in%20Membership%20Card" class="btn" style="background: var(--brand-black);">Apply for Card</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h2>Contact Our Hub</h2>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/e117mR67mtPJgNPX8?g_st=awb" target="_blank">Shahad Tower, Near Mahaveera Circle, Mangalore (View Map)</a></p>
+                <p><i class="fas fa-phone-alt"></i> Service: 7349466814 | Sales: 7204166813</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp Enquiry: 7349466814</p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/ontech_electrical_plumbing?igsh=MWx2azk0MWx3Mm51MQ==" target="_blank">ontech_electrical_plumbing</a></p>
+            </div>
+            
+            <div class="ready-section">
+                <h3 style="margin-bottom: 20px; font-family: 'Montserrat'; font-weight: 800; color: #fff;">Ready to Start?</h3>
+                <p style="color: #aaa; margin-bottom: 25px;">Expert solutions for electrical and plumbing. Available 24/7 across Mangalore.</p>
+                <a href="https://wa.me/917349466814" class="btn">Message on WhatsApp</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px; color: #444; font-size: 0.8rem;">
+            © 2026 ONTECH - INFINITE SERVICE HUB. Reliable. Fast. Professional.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/917349466814" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
